@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package proto;
+
+import "google/api/annotations.proto";
+
+
+service Customer {
+    // 创建任务
+    rpc Create(CreateRequest) returns (CreateResponse) {
+        option (google.api.http) = {
+            post: "/",
+            body: "*"
+        };
+    }
+}
+
+message CreateRequest {
+}
+
+message CreateResponse {
+}
