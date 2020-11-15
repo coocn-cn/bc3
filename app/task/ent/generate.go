@@ -1,3 +1,5 @@
 package ent
 
-//go:generate go run github.com/facebook/ent/cmd/entc generate --feature privacy ./schema
+import _ "github.com/lib/pq"
+
+//go:generate go run entc.go

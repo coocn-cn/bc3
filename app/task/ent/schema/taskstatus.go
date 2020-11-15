@@ -17,7 +17,11 @@ type TaskStatus struct {
 func (TaskStatus) Fields() []ent.Field {
 	return []ent.Field{
 		field.String("name"),
-		field.Enum("type").ValueMap(map[string]string{"0": "无效", "1": "通常", "2": "结束"}),
+		field.Enum("type").NamedValues(
+			"0", "无效",
+			"1", "通常",
+			"2", "结束",
+		),
 	}
 }
 

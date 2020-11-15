@@ -13,3 +13,9 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# github.com/facebook/ent
+**/ent/*
+!**/ent/schema/
+!**/ent/entc.go
+!**/ent/generate.go
