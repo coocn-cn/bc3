@@ -19,3 +19,10 @@
 !**/ent/schema/
 !**/ent/entc.go
 !**/ent/generate.go
+
+# github.com/99designs/gqlgen
+**/graph/*
+!**/graph/resolver
+!**/graph/*.yml
+!**/graph/*.graphqls
+!**/graph/generate.go
