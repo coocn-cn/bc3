@@ -1,0 +1,49 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+scalar TaskStatusType
+
+type Task implements Node {
+  id: ID!
+  title: String!
+  content: String!
+  manHour: Int
+  endTime: Time
+  startTime: Time
+  createTime: Time
+  edges: TaskEdges
+}
+
+type TaskEdges {
+  child: [Task!]
+  parent: Task
+  status: TaskStatus
+  assign: [TaskAssign!]
+  operator: User
+}
+
+type TaskAssign implements Node {
+  id: ID!
+  createTime: Time
+  edges: TaskAssignEdges
+}
+
+type TaskAssignEdges {
+  task: Task
+  user: User
+  operator: User
+}
+
+type TaskStatus implements Node {
+  id: ID!
+  name: String!
+  type: TaskStatusType!
+  createTime: Time
+  edges: TaskStatusEdges
+}
+
+type TaskStatusEdges {
+  task: [Task!]
+  operator: User
+}

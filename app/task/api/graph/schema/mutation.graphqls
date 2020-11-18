@@ -1,0 +1,15 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+input TodoInput {
+  status: Status! = IN_PROGRESS
+  priority: Int
+  text: String!
+  parent: ID
+}
+
+type Mutation {
+  createTodo(todo: TodoInput!): Todo!
+  clearTodos: Int!
+}

@@ -22,7 +22,7 @@
 
 # github.com/99designs/gqlgen
 **/graph/*
+!**/graph/schema
 !**/graph/resolver
 !**/graph/*.yml
-!**/graph/*.graphqls
 !**/graph/generate.go

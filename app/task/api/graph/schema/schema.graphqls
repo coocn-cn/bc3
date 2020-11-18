@@ -1,0 +1,13 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+directive @goField(forceResolver: Boolean, name: String) on INPUT_FIELD_DEFINITION
+    | FIELD_DEFINITION
+    
+interface Node {
+  id: ID! 
+}
+
+scalar Time
+scalar Cursor

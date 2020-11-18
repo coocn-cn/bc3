@@ -1,0 +1,18 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+enum Status {
+  IN_PROGRESS
+  COMPLETED
+}
+
+type Todo implements Node {
+  id: ID!
+  createdAt: Time
+  status: Status!
+  priority: Int!
+  text: String!
+  parent: Todo
+  children: [Todo!]
+}

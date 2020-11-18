@@ -1,0 +1,21 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+
+type User implements Node {
+  id: ID!
+  email: String
+  phone: String
+  password: String!
+  nickname: String
+  createTime: Time
+  edges: UserEdges
+}
+
+type UserEdges {
+  taskOperator: [Task!]
+  taskAssign: [TaskAssign!]
+  taskAssignOperator: [TaskAssign!]
+  taskStatusOperator: [TaskStatus!]
+}
