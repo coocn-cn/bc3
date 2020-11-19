@@ -1,3 +1,4 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -28,12 +29,35 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     "css-loader"
                 ]
+            },
+            {
+                test: /\.(eot|woff2?|ttf|svg)$/,
+                use: [
+                    {
+                        loader: "url-loader", options: {
+                            name: "[name]-[hash:5].min.[ext]", limit: 5000, // fonts file size <= 5KB, use 'base64'; else, output svg file
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'less-loader'
+                ]
             }
         ]
     },
     // https://webpack.js.org/concepts/plugins/
     plugins: [
         new CleanWebpackPlugin(),
+        new CopyWebpackPlugin({
+            patterns:[
+                { from: 'src/images', to: 'images' },
+            ],
+        }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             inject: true,
