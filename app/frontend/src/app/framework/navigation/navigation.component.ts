@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import navigation from './navigation.json';
 
 @Component({
   selector: 'framework-navigation',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.less']
 })
 export class NavigationComponent implements OnInit {
-
+  navigation = navigation;
   constructor() { }
 
   ngOnInit(): void {
