@@ -1,12 +1,13 @@
 <div class="tm-sidebar-left uk-visible@m">
 
-    <h3>Documentation</h3>
-
-    <ul *ngFor="let item of navigation | keyvalue : true" class="uk-nav uk-nav-default tm-nav">
-        <li class="uk-nav-header">{{ item.key }}</li>
-        <li *ngFor="let item2 of item.value | keyvalue">
-            <a >{{ item2.key }}</a>
-        </li>
+    <ul class="uk-nav uk-nav-default tm-nav">
+        <li routerLinkActive="uk-active"><a routerLink="/home" class="uk-card uk-card-default uk-card-hover"><span uk-icon="icon: home;ratio: 3.5"></span>主页</a></li>
+        <li routerLinkActive="uk-active"><a href="#" class="uk-card uk-card-default uk-card-hover"><span uk-icon="icon: social;ratio: 3.5"></span>想法</a></li>
+        <li routerLinkActive="uk-active"><a routerLink="/task" class="uk-card uk-card-default uk-card-hover"><span uk-icon="icon: list;ratio: 3.5"></span>任务</a></li>
+        <li routerLinkActive="uk-active"><a href="#" class="uk-card uk-card-default uk-card-hover"><span uk-icon="icon: comments;ratio: 3.5"></span>聊天</a></li>
+        <li routerLinkActive="uk-active"><a href="#" class="uk-card uk-card-default uk-card-hover"><span uk-icon="icon: folder;ratio: 3.5"></span>文件</a></li>
+        <li routerLinkActive="uk-active"><a href="#" class="uk-card uk-card-default uk-card-hover"><span uk-icon="icon: calendar;ratio: 3.5"></span>日程</a></li>
+        <li routerLinkActive="uk-active"><a routerLink="/questionnaires" class="uk-card uk-card-default uk-card-hover"><span uk-icon="icon: future;ratio: 3.5"></span>报告</a></li>
     </ul>
 
 </div>

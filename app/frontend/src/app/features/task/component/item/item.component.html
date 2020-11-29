@@ -1,0 +1,24 @@
+
+        <div class="uk-flex">
+            <span class="tm-sortable-handle" style="margin-right: 10px; cursor: grab;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="6" viewBox="0 0 16 6">
+                    <path id="Icon_awesome-grip-lines" data-name="Icon awesome-grip-lines" d="M15.5,15.25H.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h15a.5.5,0,0,0,.5-.5v-1A.5.5,0,0,0,15.5,15.25Zm0-4H.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h15a.5.5,0,0,0,.5-.5v-1A.5.5,0,0,0,15.5,11.25Z" transform="translate(0 -11.25)" fill="#c9c9c9"/>
+                </svg>
+            </span>
+            <div style="border-bottom: 1px solid #e5e5e5; width: 100%; padding-bottom: 10px;"  (mouseenter)="add.style.display= 'inline' " (mouseleave)="add.style.display= 'none'">
+                    <input class="uk-checkbox" type="checkbox" style=" margin-right: 10px;" [checked]="task.complete">
+                    <span style="padding: 5px" (mouseenter)="title.style.padding='4px';title.style.borderRadius='5px';title.style.border= '1px solid #999';" (mouseleave)="title.style.padding='5px';title.style.borderRadius='';title.style.border= '';" #title>{{ task.title }}</span>
+                    <span  style="color: #faa05a; font-size: 12px; margin-right: 5px;margin: 0 5px;" *ngIf="task.startTime || task.endTime">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17.778" viewBox="0 0 16 17.778">
+                            <path id="Icon_material-date-range" data-name="Icon material-date-range" d="M9.833,11H8.056v1.778H9.833Zm3.556,0H11.611v1.778h1.778Zm3.556,0H15.167v1.778h1.778Zm1.778-6.222h-.889V3H16.056V4.778H8.944V3H7.167V4.778H6.278A1.77,1.77,0,0,0,4.509,6.556L4.5,19a1.777,1.777,0,0,0,1.778,1.778H18.722A1.783,1.783,0,0,0,20.5,19V6.556A1.783,1.783,0,0,0,18.722,4.778Zm0,14.222H6.278V9.222H18.722Z" transform="translate(-4.5 -3)" fill="#faa05a"/>
+                          </svg>
+                          {{formatScheduleDate(task.startTime,task.endTime)}}
+                    </span>
+                    <span class="uk-label" style="margin: 0 5px;" *ngFor="let name of task.assignNames">{{name}}</span>
+                    <span style="display: none;" #add>
+                        <a style="font-size: 12px; margin-left: 5px;text-decoration:underline;" href="" *ngIf="task.assignNames == null || task.assignNames.length == 0">分配...</a>
+                        <a style="font-size: 12px; margin-left: 5px;text-decoration:underline;" href="" *ngIf="task.endTime == null && task.startTime == null">排期...</a>
+                        <a style="font-size: 12px; margin-left: 5px;text-decoration:underline;" href="" *ngIf="task.assignNames != null && task.assignNames.length != 0 && (task.endTime != null || task.startTime != null)" #edit>编辑</a>
+                    </span>
+            </div>
+        </div>

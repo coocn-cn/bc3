@@ -1,0 +1,25 @@
+<div class="uk-flex">
+    <span  class="tm-sortable-handle" style="padding: 5px; cursor: grab;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="9" viewBox="0 0 24 9">
+            <path id="Icon_awesome-grip-lines" data-name="Icon awesome-grip-lines" d="M23.25,17.25H.75A.752.752,0,0,0,0,18v1.5a.752.752,0,0,0,.75.75h22.5A.752.752,0,0,0,24,19.5V18A.752.752,0,0,0,23.25,17.25Zm0-6H.75A.752.752,0,0,0,0,12v1.5a.752.752,0,0,0,.75.75h22.5A.752.752,0,0,0,24,13.5V12A.752.752,0,0,0,23.25,11.25Z" transform="translate(0 -11.25)" fill="#222"/>
+          </svg>
+    </span>
+
+    <div style="width: 100%;" (mouseenter)="add.style.display= 'block' " (mouseleave)="add.style.display= 'none'">
+        <div class="uk-flex" >
+            <span style="padding: 5px; font-size: 15px; color: #222;">{{name}}</span>
+            <span  style="padding: 5px; ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19.554" viewBox="0 0 20 19.554">
+                    <g id="Icon_ionic-ios-pie" data-name="Icon ionic-ios-pie" transform="translate(-2.25 -2.25)">
+                      <path id="路径_3" data-name="路径 3" d="M13.794,4.677v9.144a.331.331,0,0,1-.252.322L5.618,16.172A.168.168,0,0,0,5.5,16.4,8.722,8.722,0,1,0,13.971,4.514.167.167,0,0,0,13.794,4.677Z" transform="translate(-0.103 -0.072)" fill="#e5e5e5"/>
+                      <path id="路径_4" data-name="路径 4" d="M2.25,10.5a9.531,9.531,0,0,0,.591,3.227.152.152,0,0,0,.179.088l7.539-1.978a.356.356,0,0,0,.249-.326v-9.1a.158.158,0,0,0-.156-.159C4.545,2.326,2.25,6.905,2.25,10.5Z" transform="translate(0 0)" fill="#39f"/>
+                    </g>
+                  </svg>
+                </span>
+                  
+            <span style="padding: 0 5px;margin-top: 13px; font-size: 13px; color: #999; ">2/11 已完成</span>
+                <a style="margin-top: 10px;  margin-left: 10px; color: #3399FF;  border-radius: 5px;display:none"  uk-icon="plus" width="20" height="20" #add></a>
+        </div>
+        <hr class="uk-margin-large uk-margin-remove" style="border-top:1px solid #e5e5e5">
+    </div>
+</div>
