@@ -5,8 +5,8 @@
 package mixin
 
 import (
-	"github.com/facebook/ent"
-	"github.com/facebook/ent/schema"
+	"entgo.io/ent"
+	"entgo.io/ent/schema"
 )
 
 // Schema is the default implementation for the ent.Mixin interface.
